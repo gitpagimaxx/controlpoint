@@ -16,8 +16,10 @@ class ControlPointController extends Controller
      */
     public function index()
     {
-        $controlPoint = ControlPoint::where('UserId', Auth::user()->id)->where('DtHr', date('Y-m-d'))->first();
-        return view('control-point.control')->with('controlPoint', $controlPoint);
+        $today = date('Y-m-d');
+        $controlPoints = ControlPoint::where('UserId', Auth::user()->id)->get();
+        $controlPointToday = ControlPoint::where('UserId', Auth::user()->id)->where('DtHr', date('Y-m-d'))->first();
+        return view('control-point.control')->with('controlPoints', $controlPoints)->with('controlPointToday', $controlPointToday)->with('today', $today);
     }
 
     public function register(Request $request): RedirectResponse
