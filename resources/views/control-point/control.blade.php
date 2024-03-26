@@ -54,8 +54,8 @@
 
                         <div class="divide-y divide-white">&nbsp;</div>
                     
-                        <div class="flex justify-between mt-7">
-                            <div class="flex-1">
+                        <div class="w-full justify-between mt-7">
+                            <div class="">
                                 <table class="table-auto border">
                                     <thead>
                                         <tr class="w-full">
@@ -69,7 +69,7 @@
                                     <tbody>
                                         @foreach($controlPoints as $controlPoint)
                                         <tr>
-                                            <td class="p-2 border-b text-left">{{ \Carbon\Carbon::parse($controlPoint->Date)->format('d/m/Y') }}</td>
+                                            <td class="p-2 border-b text-left">{{ \Carbon\Carbon::parse($controlPoint->DtHr)->format('d/m/Y') }}</td>
                                             <td class="p-2 border-b text-center">{{ \Carbon\Carbon::parse($controlPoint->ClockIn)->format('H:i') }}</td>
                                             <td class="p-2 border-b text-center">{{ \Carbon\Carbon::parse($controlPoint->LunchTimeIn)->format('H:i') }}</td>
                                             <td class="p-2 border-b text-center">{{ \Carbon\Carbon::parse($controlPoint->LunchTimeOut)->format('H:i') }}</td>
